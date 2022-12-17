@@ -19,6 +19,9 @@ function display(){
     echo __NAMESPACE__,"<br>";
 }
 
+function show(){
+    echo __METHOD__,"<br>";
+}
 const PI = 3.14;
 class Human{
 
@@ -35,4 +38,14 @@ namespace space2;
 class Human{
 
 }
+function display(){
+    echo __NAMESPACE__,"<br>";
+}
 const PI = 3.14;
+//非限定名访问，这里访问的是space2这个命名空间的display,因为目前就处在space2空间中
+//输出space2
+display();
+//异常，因为space2中没有show函数
+//show();
+//除非加上namespace来访问，就可以访问其他namespace的函数
+\my_space\show();
